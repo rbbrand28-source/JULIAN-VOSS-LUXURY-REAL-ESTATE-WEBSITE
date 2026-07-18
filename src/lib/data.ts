@@ -502,4 +502,50 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "The transaction was completed without a single photograph leaving the room. That is not a service one buys. It is a posture one
+      "The transaction was completed without a single photograph leaving the room. That is not a service one buys. It is a posture one recognises.",
+      "We have worked with the largest houses in three countries. Julian is the only advisor who has never once asked us to lower our standard. He raised his instead.",
+  {
+    year: "2004",
+    title: "First eight-figure sale",
+    text: "Advised the disposition of a Cap Ferrat estate at a price that, at the time, established a new recorded high for the cape.",
+  },
+  {
+    year: "2011",
+    title: "Cross-border practice",
+    text: "Extended the practice into Monaco, Switzerland and London — operating, as now, without partners or franchise.",
+  },
+  {
+    year: "2017",
+    title: "€500M career volume",
+    text: "Crossed half a billion euros in cumulative career sales volume, entirely as a sole practitioner.",
+  },
+  {
+    year: "2021",
+    title: "The first island",
+    text: "Advised on the first sovereign-lease private island transaction in his practice — a category he has since come to specialise in.",
+  },
+  {
+    year: "2024",
+    title: "€1.2B career volume",
+    text: "Crossed €1.2 billion in career sales volume. The practice remains solo: no junior advisors, no franchised listings, no public marketing.",
+  },
+];
+
+export const ADVISOR_STATS = [
+  { label: "Career sales volume", value: "€1.2B+" },
+  { label: "Years in practice", value: "28" },
+  { label: "Active clients", value: "≤ 40" },
+  { label: "Partners or franchisees", value: "None" },
+];
+
+export const NAV_ITEMS = [
+  { label: "Home", to: "/" },
+  { label: "Signature Properties", to: "/properties" },
+  { label: "Private Collections", to: "/collections" },
+  { label: "Market Intelligence", to: "/intelligence" },
+  { label: "The Advisor", to: "/advisor" },
+  { label: "Client Legacy", to: "/legacy" },
+  { label: "Private Salon", to: "/salon" },
+  { label: "Contact", to: "/contact" },
+];
+
