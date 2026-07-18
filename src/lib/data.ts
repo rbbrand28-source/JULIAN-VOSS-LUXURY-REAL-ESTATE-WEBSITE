@@ -503,6 +503,12 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "The transaction was completed without a single photograph leaving the room. That is not a service one buys. It is a posture one recognises.",
+     attribution: "Founder, technology (anonymised)",
+    context: "Disposition of a Cap Ferrat estate, 2024",
+    year: "2024",
+  },
+  {
+    quote:
       "We have worked with the largest houses in three countries. Julian is the only advisor who has never once asked us to lower our standard. He raised his instead.",
   {
     year: "2004",
