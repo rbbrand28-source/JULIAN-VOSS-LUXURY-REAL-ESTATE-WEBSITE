@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Julian Voss | Legacy Estates — Design System
+  Ultra-premium luxury palette: deep midnight navy, charcoal graphite,
+  warm platinum gold, soft ivory, light platinum, soft emerald accent.
+  All colors as HSL for Tailwind token compatibility.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 213 50% 9%;            /* #0A1428 deep midnight navy */
+    --foreground: 40 35% 93%;            /* #F5F0E6 soft ivory */
+
+    --card: 210 12% 12%;                 /* #1C2526 rich charcoal graphite */
+    --card-foreground: 40 35% 93%;
+
+    --popover: 213 50% 9%;
+    --popover-foreground: 40 35% 93%;
+
+    /* Brand */
+    --primary: 33 52% 68%;               /* #D4AF88 warm platinum gold */
+    --primary-foreground: 213 50% 9%;
+
+    --secondary: 210 12% 16%;
+    --secondary-foreground: 42 30% 86%;  /* #E8E0D0 light platinum */
+
+    --muted: 210 12% 15%;
+    --muted-foreground: 42 18% 72%;
+
+    --accent: 162 65% 18%;               /* #0F4C3A soft emerald */
+    --accent-foreground: 40 35% 93%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 35% 93%;
+
+    --border: 210 14% 20%;
+    --input: 210 14% 22%;
+    --ring: 33 52% 68%;
+
+    --radius: 0.25rem;
+
+    /* Luxury extended tokens */
+    --gold: 33 52% 68%;
+    --gold-soft: 33 40% 58%;
+    --gold-deep: 30 35% 42%;
+    --navy: 213 50% 9%;
+    --navy-deep: 213 60% 5%;
+    --charcoal: 210 12% 12%;
+    --ivory: 40 35% 93%;
+    --platinum: 42 30% 86%;
+    --emerald: 162 65% 18%;
+
+    --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01", "cv11";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.25);
+    color: hsl(var(--ivory));
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--navy-deep));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--gold) / 0.25);
+    border-radius: 999px;
+    border: 2px solid hsl(var(--navy-deep));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gold) / 0.45);
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Eyebrow label — spaced caps, platinum gold */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: hsl(var(--gold) / 0.85);
+  }
+
+  /* Hairline divider */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--gold) / 0.35),
+      transparent
+    );
+  }
+
+  /* Platinum gold text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(
+      120deg,
+      hsl(33 60% 72%),
+      hsl(38 45% 82%),
+      hsl(30 35% 55%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Frosted glass panel */
+  .glass-panel {
+    background: hsl(var(--navy) / 0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid hsl(var(--gold) / 0.12);
+  }
+
+  /* Gold hairline border on hover */
+  .gold-frame {
+    transition: border-color 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease;
+  }
+  .gold-frame:hover {
+    border-color: hsl(var(--gold) / 0.5);
+    box-shadow: 0 30px 60px -20px hsl(30 40% 30% / 0.35),
+      0 0 0 1px hsl(var(--gold) / 0.08) inset;
+  }
+
+  /* Noise / grain overlay */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Animated gold underline link */
+  .link-gold {
+    position: relative;
+    display: inline-block;
+  }
+  .link-gold::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: hsl(var(--gold));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-gold:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Slow ken-burns zoom for hero images */
+  .animate-kenburns {
+    animation: kenburns 24s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    0% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.12) translate3d(-1.5%, -2%, 0);
+    }
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 9s ease-in-out infinite;
+  }
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      hsl(33 40% 55%) 0%,
+      hsl(38 55% 78%) 25%,
+      hsl(30 35% 50%) 50%,
+      hsl(38 55% 78%) 75%,
+      hsl(33 40% 55%) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 6s linear infinite;
+  }
+  @keyframes shimmer {
+    to { background-position: 200% center; }
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
+
