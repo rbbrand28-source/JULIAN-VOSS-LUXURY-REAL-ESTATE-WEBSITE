@@ -502,4 +502,87 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "The transaction was completed without a single photograph leaving the room. That is not a service one buys. It is a posture one
+      "The transaction was completed without a single photograph leaving the room. That is not a service one buys. It is a posture one recognises.",
+    attribution: "Founder, technology (anonymised)",
+    context: "Disposition of a Cap Ferrat estate, 2024",
+    year: "2024",
+  },
+  {
+    quote:
+      "We have worked with the largest houses in three countries. Julian is the only advisor who has never once asked us to lower our standard. He raised his instead.",
+    attribution: "Private trust, London",
+    context: "Three-generation acquisition programme, 2022–2025",
+    year: "2025",
+  },
+  {
+    quote:
+      "He told us, plainly, not to buy the property we had flown six hours to see. We did not. Eighteen months later we understood why. That is the value of an advisor.",
+    attribution: "Industrialist, Milan",
+    context: "Averted acquisition, 2024",
+    year: "2024",
+  },
+  {
+    quote:
+      "Discretion is the absence of vanity. Julian is the only person I have referred to my brother.",
+    attribution: "Collector, Monaco",
+    context: "Penthouse acquisition, 2025",
+    year: "2025",
+  },
+];
+
+export interface TimelineEntry {
+  year: string;
+  title: string;
+  text: string;
+}
+
+export const ADVISOR_TIMELINE: TimelineEntry[] = [
+  {
+    year: "1998",
+    title: "First transaction",
+    text: "Began as a solo advisor on the Côte d'Azur, brokering a single estate in his first year — a transaction that closed without ever reaching an open listing.",
+  },
+  {
+    year: "2004",
+    title: "First eight-figure sale",
+    text: "Advised the disposition of a Cap Ferrat estate at a price that, at the time, established a new recorded high for the cape.",
+  },
+  {
+    year: "2011",
+    title: "Cross-border practice",
+    text: "Extended the practice into Monaco, Switzerland and London — operating, as now, without partners or franchise.",
+  },
+  {
+    year: "2017",
+    title: "€500M career volume",
+    text: "Crossed half a billion euros in cumulative career sales volume, entirely as a sole practitioner.",
+  },
+  {
+    year: "2021",
+    title: "The first island",
+    text: "Advised on the first sovereign-lease private island transaction in his practice — a category he has since come to specialise in.",
+  },
+  {
+    year: "2024",
+    title: "€1.2B career volume",
+    text: "Crossed €1.2 billion in career sales volume. The practice remains solo: no junior advisors, no franchised listings, no public marketing.",
+  },
+];
+
+export const ADVISOR_STATS = [
+  { label: "Career sales volume", value: "€1.2B+" },
+  { label: "Years in practice", value: "28" },
+  { label: "Active clients", value: "≤ 40" },
+  { label: "Partners or franchisees", value: "None" },
+];
+
+export const NAV_ITEMS = [
+  { label: "Home", to: "/" },
+  { label: "Signature Properties", to: "/properties" },
+  { label: "Private Collections", to: "/collections" },
+  { label: "Market Intelligence", to: "/intelligence" },
+  { label: "The Advisor", to: "/advisor" },
+  { label: "Client Legacy", to: "/legacy" },
+  { label: "Private Salon", to: "/salon" },
+  { label: "Contact", to: "/contact" },
+];
